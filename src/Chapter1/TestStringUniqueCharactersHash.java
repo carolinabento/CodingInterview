@@ -4,24 +4,24 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestStringUniqueCharacters {
+public class TestStringUniqueCharactersHash {
 
 	@Test
 	public void duplicateCharacters(){
 		String s = "abcdefga";
-		assertFalse(new StringUniqueCharacters(s).isOnlyUniqueCharacters());
+		assertFalse(new StringUniqueCharactersHash(s).isOnlyUniqueCharacters());
 	}
 	
 	@Test
 	public void uniqueCharacters(){
 		String s = "abcdefg";
-		assertTrue(new StringUniqueCharacters(s).isOnlyUniqueCharacters());
+		assertTrue(new StringUniqueCharactersHash(s).isOnlyUniqueCharacters());
 	}
 	
 	@Test
 	public void emptyString(){
 		String s = "";
-		assertTrue(new StringUniqueCharacters(s).isOnlyUniqueCharacters());
+		assertTrue(new StringUniqueCharactersHash(s).isOnlyUniqueCharacters());
 	}
 
 }

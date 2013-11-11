@@ -4,11 +4,11 @@ package Chapter1;
 import java.util.HashMap;
 
 
-public class StringUniqueCharacters {
+public class StringUniqueCharactersHash {
 
 	private String s;
 	
-	public StringUniqueCharacters(String s) {
+	public StringUniqueCharactersHash(String s) {
 		this.s = s;
 	}
 	

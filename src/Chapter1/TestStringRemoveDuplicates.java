@@ -1,8 +1,6 @@
 package Chapter1;
 
 import static org.junit.Assert.*;
-
-import org.junit.Ignore;
 import org.junit.Test;
 
 
