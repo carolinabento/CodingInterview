@@ -4,16 +4,31 @@ package Chapter1;
 public class StringRemoveDuplicates {
 	public static final int MAX_SIZE = 100;
 	public static final char END_OF_STRING = '\0';
+	
 	private char[] s;
 	private int length;
 	
 	public StringRemoveDuplicates(char[] s) {
-		this.s = s;
+		this.length = getStringSize(s);
+		this.s = copyString(s, length);
+		RemoveDuplicates();
+		this.s = copyString(this.s, getStringSize(this.s));
+	}
+	
+	private int getStringSize(char[] s) {
 		int i = 0;
 		while(s[i] != END_OF_STRING && i < MAX_SIZE) {
 			i++;
 		}
-		this.length = i + 1;
+		return i+1;
+	}
+	
+	private char[] copyString(char[]s, int size) {
+		char[] str = new char[size];
+		for (int i = 0; i < size; i++) {
+			str[i] = s[i];
+		}
+		return str;
 	}
 	
 	public char[] GetArray() {
@@ -21,7 +36,7 @@ public class StringRemoveDuplicates {
 	}
 	
 	//invariant : left of i there are only non-duplicates
-	public void RemoveDuplicates() {
+	private void RemoveDuplicates() {
 		int i = 0, j = 0, k = 1;
 		while (k < length) {
 			for (j = i; j >= -1; j--) {
@@ -32,10 +47,13 @@ public class StringRemoveDuplicates {
 					}
 				} else {
 					if (k > i + 1) {
-						swap(i, k);						
+						i++;
+						swap(i, k);	
+						k++;
+					} else {
+						i++;
+						k++;
 					}
-					i++;
-					k++;
 				}
 			}
 		}
