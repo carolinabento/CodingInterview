@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-public class LinkedListTest {
+public class TestLinkedList {
 
 	@Test(expected = NullPointerException.class)
 	public void testEmptyList() {
@@ -20,13 +20,19 @@ public class LinkedListTest {
 		assertEquals(myList.peek(), "5");
 	}
 
+	@Test
+	public void testConstructor() {
+		LinkedList<Integer>  myList = new LinkedList<Integer> (new Integer(5));
+		myList.peek();
 
+	}
+	
 	@Test(expected = NullPointerException.class)
 	public void testDequeueEmpty(){
 		LinkedList<String> myList = new LinkedList<String> ();
 		myList.dequeue();
-	}
-
+	}	
+	
 	@Test
 	public void testDequeue(){
 		LinkedList<Integer>  myList = new LinkedList<Integer> ();
@@ -43,5 +49,19 @@ public class LinkedListTest {
 
 		assertEquals(myList.dequeue(),new Integer(1));
 		assertEquals(myList.dequeue(),new Integer(2));
+	}
+	
+	@Test
+	public void testSize(){
+		LinkedList<String>  myList = new LinkedList<String> ();
+
+		assertEquals(myList.size(), 0);
+		
+		myList.append("5");
+		assertEquals(myList.size(), 1);
+		
+		myList.dequeue();
+		
+		assertEquals(myList.size(), 0);
 	}
 }

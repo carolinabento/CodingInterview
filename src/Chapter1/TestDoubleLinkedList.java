@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 
-public class DoubleLinkedListTest {
+public class TestDoubleLinkedList {
 
 	@Test(expected = NullPointerException.class)
 	public void testEmptyList() {

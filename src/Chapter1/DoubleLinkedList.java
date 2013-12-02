@@ -17,9 +17,9 @@ package Chapter1;
  *
  * @author Carolina
  *
- * @param <Type> - any template
+ * @param <T> - any template
  */
-public class DoubleLinkedList<Type> {
+public class DoubleLinkedList<T> {
 
 	private Node head;
 	private Node tail;
@@ -37,7 +37,7 @@ public class DoubleLinkedList<Type> {
 	/**
 	 * Create LinkedList with an initial element
 	 */
-	public DoubleLinkedList(Type value){
+	public DoubleLinkedList(T value){
 		Node node = new Node(value);
 		this.head = node;
 		this.tail = node;
@@ -64,7 +64,7 @@ public class DoubleLinkedList<Type> {
 	 * Appends an element to the end of the list
 	 * @param value - value to append
 	 */
-	public void append(Type value){
+	public void append(T value){
 		Node node = new Node(value);
 		if(isEmpty()){
 			this.head = node;
@@ -105,7 +105,7 @@ public class DoubleLinkedList<Type> {
 	 * Retrieve and remove first element of the LinkedList 
 	 * @return
 	 */
-	public Type removeHead(){
+	public T removeHead(){
 		if(!isEmpty()){
 			Node head = this.head;
 			this.head = head.next;
@@ -123,7 +123,7 @@ public class DoubleLinkedList<Type> {
 	 * Remove last element of the LinkedList 
 	 * @return
 	 */
-	public Type removeTail(){
+	public T removeTail(){
 		if(!isEmpty()){
 			Node tail = this.tail;
 
@@ -143,7 +143,7 @@ public class DoubleLinkedList<Type> {
 	 * Check the value of head of the LinkedList
 	 * @return the value of the head Node
 	 */
-	public Type peek(){
+	public T peek(){
 		return this.head.value;
 	}
 
@@ -151,7 +151,7 @@ public class DoubleLinkedList<Type> {
 	 * Check the value of head of the LinkedList
 	 * @return the value of the tail Node
 	 */
-	public Type peekTail(){
+	public T peekTail(){
 		return this.tail.value;
 	}
 	
@@ -161,14 +161,14 @@ public class DoubleLinkedList<Type> {
 	 *
 	 */
 	public class Node{
-		private Type value;
+		private T value;
 		private Node next;
 		private Node prev;
 
 		public Node(){
 		}
 
-		public Node(Type value){
+		public Node(T value){
 			this.value = value;
 			this.next = null;
 			this.prev = null;
