@@ -1,3 +1,4 @@
+//1.1 improvement
 package Chapter1;
 
 public class StringUniqueCharsNoHash {

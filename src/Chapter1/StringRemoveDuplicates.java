@@ -1,4 +1,4 @@
-//1.4 Remove duplicates from string
+//??.?? Remove duplicates from string
 package Chapter1;
 
 public class StringRemoveDuplicates {

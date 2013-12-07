@@ -1,5 +1,4 @@
-/*1.3- Reverse a C-style string
- */
+/*1.2- Reverse a C-style string*/
 package Chapter1;
 
 import java.util.Stack;
