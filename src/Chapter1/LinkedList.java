@@ -99,4 +99,14 @@ public class LinkedList<T> {
 	public Node<T> getHead(){
 		return this.head;
 	}
+	
+	public void prettyPrint(){
+		Node<T> head = this.getHead();
+
+		while(head.next != null){
+			System.out.print(head.value + " -> ");
+			head = head.next;
+		}
+		System.out.println(" //");
+	}
 }

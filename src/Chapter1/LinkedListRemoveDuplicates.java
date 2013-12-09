@@ -25,14 +25,4 @@ public class LinkedListRemoveDuplicates<T> {
 			return res;
 		}
 	}
-
-	public void prettyPrint(LinkedList<T> list){
-		Node<T> head = list.getHead();
-
-		while(head.next != null){
-			System.out.print(head.value + " -> ");
-			head = head.next;
-		}
-		System.out.println(" //");
-	}
 }
