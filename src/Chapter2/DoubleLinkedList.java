@@ -1,4 +1,4 @@
-package Chapter1;
+package Chapter2;
 /**
  * Implementation of a double Linked List with the common API methods:
  * 	- create empty double LinkedList

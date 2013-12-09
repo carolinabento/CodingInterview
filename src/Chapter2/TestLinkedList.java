@@ -1,4 +1,4 @@
-package Chapter1;
+package Chapter2;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
