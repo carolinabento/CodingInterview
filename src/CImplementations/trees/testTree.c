@@ -624,6 +624,30 @@ void isBalancedTestIII(){
 }
 
 
+void getNodesDepthTest(){
+	Node* root = newTree();
+
+	root = insert(root, 5);
+	root = insert(root, 4);
+	root = insert(root, 3);
+	root = insert(root, 7);
+	root = insert(root, 6);
+	root = insert(root, 8);
+
+
+	assert(root->number == 5);
+	assert(root->left->number == 4);
+	assert(root->right->number == 7);
+
+	NodeList *list = newLinkedlist();
+	list = getNodesN(root,1);
+	
+	assert(list->value == 7);
+	assert(list->next->value == 4);
+}
+
+
+
 int main(){
 
 	createEmptyTreeTest();
@@ -658,6 +682,6 @@ int main(){
 	isBalancedTestI();
 	isBalancedTestII();
 	isBalancedTestIII();
-	
+	getNodesDepthTest();
 return 0;
 }

@@ -13,6 +13,30 @@ Node* newTree(){
 return tree;
 }
 
+typedef struct NodeList{
+	int value;
+	struct NodeList* next;
+}NodeList;
+
+
+NodeList* newLinkedlist(){
+	NodeList* head = NULL;
+
+return head;
+}
+
+NodeList* push(NodeList** head, int value){
+	NodeList* node = (NodeList*) malloc (sizeof(NodeList*));
+
+	node->value = value;
+	node->next = *head;
+	*head = node;
+
+return *head;
+}
+
+
+
 int lookup(Node* root, int target){
 int res = 0;
 
@@ -309,4 +333,31 @@ int isBalanced(Node* node){
 	}else{
 		return 0;
 	}	
+}
+
+
+
+void recursiveFunctionList(Node* treeNode, int depth, NodeList** list,int currDepth){
+	if(currDepth == depth){
+		if(treeNode != NULL){
+			*list = push(list,treeNode->number);
+			return;
+		}
+	}else{
+		recursiveFunctionList(treeNode->left, depth,list,currDepth+1);
+		recursiveFunctionList(treeNode->right, depth,list,currDepth+1);
+		}
+}
+
+NodeList* getNodesN(Node* root, int depth){
+	if(depth == 0){
+		NodeList* nodeL = (NodeList*) malloc(sizeof(NodeList));
+		nodeL->value = root->number;
+		nodeL->next = NULL;
+		return nodeL;
+	}else{
+		NodeList* resultList = newLinkedlist();
+		recursiveFunctionList(root,depth,&resultList,0);
+		return resultList;
+	}
 }
