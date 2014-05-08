@@ -3,21 +3,6 @@
 #include <math.h>
 #include <limits.h>
 
-int* merge(int* arrayA, int* arrayB, int lengthA, int lengthB){
-	int totalLen = lengthA + lengthB -1;
-	int* res = (int*) malloc(sizeof(int)*totalLen);
-	for(int i = 0, j = lengthA; i < lengthA; i++){
-		res[i] = arrayA[i];
-	}
-
-	for(int j = lengthA, k = 0; k < lengthB && j <= totalLen;j++, k++){
-		res[j] = arrayB[k];
-	}
-
-return res;
-}
-
-
 
 int* quickSort(int* array, int length){
 	int update = 1;

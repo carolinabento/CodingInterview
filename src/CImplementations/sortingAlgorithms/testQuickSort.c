@@ -4,26 +4,6 @@
 #include <assert.h>
 #include "quickSort.c"
 
-
-void testMerge(){
-
-int* arrayA = (int*) malloc(sizeof(int)*2);
-arrayA[0] = 3;
-arrayA[1] = 7;
-
-int* arrayB = (int*) malloc(sizeof(int)*2);
-arrayB[0] = 4;
-arrayB[1] = 4;
-
-int* res = merge(arrayA,arrayB,2,2);
-
-assert(res[0] == 3);	
-assert(res[1] == 7);
-assert(res[2] == 4);
-assert(res[3] == 4);
-
-}
-
 void testQuickSort(){
 	
 	int* array = (int*) malloc(sizeof(int)*4);
@@ -31,11 +11,9 @@ void testQuickSort(){
 	array[1] = 3;
 	array[2] = 5;
 	array[3] = 2;
-	
 
 	int *res = quickSort(array,4);
 	
-
 	assert(res[0] == 2);	
 	assert(res[1] == 3);
 	assert(res[2] == 5);
