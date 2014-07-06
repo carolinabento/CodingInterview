@@ -24,4 +24,8 @@ public class Node<Type>{
 	public Node<Type> getNext(){
 		return this.next;
 	}
+	
+	public boolean isEmpty(){
+		return this.getValue() == null && this.getNext() == null;
+	}
 }
