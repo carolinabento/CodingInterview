@@ -1,3 +1,5 @@
+#ifndef LINKEDLIST_H
+
 typedef struct Node{
 	int value;
 	struct Node* next;
@@ -6,3 +8,4 @@ typedef struct Node{
 Node* newLinkedList();
 int size(Node*);
 Node* push(Node**, int);
+#endif

@@ -1,3 +1,5 @@
+#ifndef STACK
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -54,3 +56,4 @@ int peek(Node* top){
 
 	return res;
 }
+#endif

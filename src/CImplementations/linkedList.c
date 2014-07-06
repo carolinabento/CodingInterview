@@ -1,3 +1,5 @@
+#ifndef LINKEDLIST 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -43,3 +45,4 @@ Node* removeFirst(Node** head){
 
 return *head;
 }
+#endif

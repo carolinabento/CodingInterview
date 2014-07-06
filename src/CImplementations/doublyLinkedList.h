@@ -1,3 +1,5 @@
+#ifndef DOUBLYLINKEDLIST_H
+
 typedef struct Node{
 	int value;
 	int size;
@@ -5,3 +7,4 @@ typedef struct Node{
 	struct Node* next;
 	struct Node* tail;
 }Node;
+#endif

@@ -1,3 +1,5 @@
+#ifndef DOUBLYLINKEDLIST
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -212,3 +214,4 @@ Node* removeAtPos(Node** head, int position){
 	}
 return temp;
 }
+#endif
