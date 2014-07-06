@@ -28,22 +28,29 @@ return *top;
 
 
 Node* pop(Node** top){
-	Node* node = (Node*) malloc (sizeof(Node*));
+	Node* temp = *top;
+
+	*top= (*top)->previous;
+	//(*top)->size = (*top)->size - 1;		
+	temp->previous = NULL;
+	//free(temp);
+
+return temp;
+}
+
+int isEmpty(Node* top){
 	if(top == NULL){
-		*top = NULL;
+		return 1;
 	}else{
-		node->value = (*top)->value;
-		node->size = 1;
-		node->previous = NULL;
-		node->next = NULL;
+		return 0;
+	}
+}
 
-		*top = (*top)->previous;
-
-		if(*top != NULL){
-			(*top)->next = NULL;
-		}
-		
+int peek(Node* top){
+	int res;
+	if(isEmpty(top) == 0){
+		res = top->value;
 	}
 
-return node;
+	return res;
 }
