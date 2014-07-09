@@ -24,11 +24,11 @@ int main(void)
 	assert(stack->size == 2);
 	assert(peek(stack) == 2);
 
-	pop(&stack);
+	assert(pop(&stack) == 2);
 	assert(stack->value == 1);
 	assert(stack->size == 1);
 
-	pop(&stack);
+	assert(pop(&stack) == 1);
 	assert(stack == NULL);
 	
 	push(&stack,3);

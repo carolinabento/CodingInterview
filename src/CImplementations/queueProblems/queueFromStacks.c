@@ -16,8 +16,7 @@ MyQueue* newMyQueue(){
 void switchStack(MyQueue** mq){
 
 	while((*mq)->s2->size > 0){
-		Node* node = pop(&(*mq)->s2);
-		push(&(*mq)->s1, node->value);
+		push(&(*mq)->s1, pop(&(*mq)->s2));
 	}
 }
 
@@ -40,23 +39,19 @@ void enqueue(MyQueue** mq, int element){
 
 
 int dequeue(MyQueue** mq){
-	Node* node = (Node*) malloc (sizeof (Node));
-	node->value = INT_MAX;
-
+	int res = INT_MAX;
 	if(*mq != NULL){
 		if((*mq)->s1->size > 0){
-			node = pop(&(*mq)->s1);
-			return node->value;
+			res = pop(&(*mq)->s1);
+			
 		}else{
 			if((*mq)->s2->size > 0){
 				switchStack(mq);
-				node = pop(&(*mq)->s1);
-				return node->value;
+				res = pop(&(*mq)->s1);
 			}
 		}
 	}
-	
-	return node->value;	
+	return res;
 }
 
 

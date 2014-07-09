@@ -17,12 +17,12 @@ void pushInOrder(Node** stack, int element){
 			push(stack,element);
 
 			while(isEmpty(tempStack) == 0){
-				push(stack,pop(&tempStack)->value);
+				push(stack,pop(&tempStack));
 			}
 			free(tempStack);
 			break;			
 		}else{
-			push(&tempStack, pop(stack)->value);
+			push(&tempStack, pop(stack));
 			swap = 1;
 			
 		}
@@ -38,10 +38,10 @@ Node* sortStackAsc(Node** top){
 	while(isEmpty(*top) == 0){
 		
 		if(isEmpty(finalStack) == 1 || peek(*top) <= peek(finalStack)){
-			push(&finalStack,pop(top)->value);
+			push(&finalStack,pop(top));
 		}else{
 			if(peek(*top) > peek(finalStack)){
-				pushInOrder(&finalStack, pop(top)->value);
+				pushInOrder(&finalStack, pop(top));
 			}
 		}
 	}

@@ -11,7 +11,7 @@ Node* newStack(){
 return top;
 }
 
-Node* push(Node** top, int value){
+void push(Node** top, int value){
 	Node* node = (Node*) malloc (sizeof(Node*));
 
 	node->value = value;
@@ -24,12 +24,10 @@ Node* push(Node** top, int value){
 		node->size = node->previous->size + 1;
 	}
 	*top = node;
-
-return *top;
 }
 
 
-Node* pop(Node** top){
+int pop(Node** top){
 	Node* temp = *top;
 
 	*top= (*top)->previous;
@@ -37,7 +35,7 @@ Node* pop(Node** top){
 	temp->previous = NULL;
 	//free(temp);
 
-return temp;
+return temp->value;
 }
 
 int isEmpty(Node* top){

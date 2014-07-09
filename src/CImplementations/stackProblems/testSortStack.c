@@ -31,13 +31,13 @@ void testSortI(){
 
 	Node* sortedStack = sortStackAsc(&stack);
 
-	assert(pop(&sortedStack)->value == 1);
-	assert(pop(&sortedStack)->value == 3);
-	assert(pop(&sortedStack)->value == 4);
-	assert(pop(&sortedStack)->value == 5);
-	assert(pop(&sortedStack)->value == 7);
-	assert(pop(&sortedStack)->value == 9);
-	assert(pop(&sortedStack)->value == 10);
+	assert(pop(&sortedStack) == 1);
+	assert(pop(&sortedStack) == 3);
+	assert(pop(&sortedStack) == 4);
+	assert(pop(&sortedStack) == 5);
+	assert(pop(&sortedStack) == 7);
+	assert(pop(&sortedStack) == 9);
+	assert(pop(&sortedStack) == 10);
 
 	assert(stack == NULL);	
 	
@@ -57,13 +57,13 @@ void testSortII(){
 
 	Node* sortedStack = sortStackAsc(&stack);
 
-	assert(pop(&sortedStack)->value == 1);
-	assert(pop(&sortedStack)->value == 2);
-	assert(pop(&sortedStack)->value == 3);
-	assert(pop(&sortedStack)->value == 4);
-	assert(pop(&sortedStack)->value == 5);
-	assert(pop(&sortedStack)->value == 6);
-	assert(pop(&sortedStack)->value == 7);
+	assert(pop(&sortedStack) == 1);
+	assert(pop(&sortedStack) == 2);
+	assert(pop(&sortedStack) == 3);
+	assert(pop(&sortedStack) == 4);
+	assert(pop(&sortedStack) == 5);
+	assert(pop(&sortedStack) == 6);
+	assert(pop(&sortedStack) == 7);
 
 	assert(stack == NULL);	
 	
@@ -84,13 +84,13 @@ void testSortIII(){
 
 	Node* sortedStack = sortStackAsc(&stack);
 
-	assert(pop(&sortedStack)->value == 1);
-	assert(pop(&sortedStack)->value == 2);
-	assert(pop(&sortedStack)->value == 3);
-	assert(pop(&sortedStack)->value == 4);
-	assert(pop(&sortedStack)->value == 5);
-	assert(pop(&sortedStack)->value == 6);
-	assert(pop(&sortedStack)->value == 7);
+	assert(pop(&sortedStack) == 1);
+	assert(pop(&sortedStack) == 2);
+	assert(pop(&sortedStack) == 3);
+	assert(pop(&sortedStack) == 4);
+	assert(pop(&sortedStack) == 5);
+	assert(pop(&sortedStack) == 6);
+	assert(pop(&sortedStack) == 7);
 
 	assert(stack == NULL);	
 	
