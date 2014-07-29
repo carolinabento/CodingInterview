@@ -19,7 +19,7 @@ public class ReverseString {
 	public char[] reverse(char[] string){
 		
 		for(int i = 0; i < string.length - 1; i ++){
-			for(int j = string.length - 2; j >= 0; j-- ){
+			for(int j = string.length - 2; j > i; j-- ){
 				char temp = string[i];
 				string[i] = string[j];
 				string[j] = temp;

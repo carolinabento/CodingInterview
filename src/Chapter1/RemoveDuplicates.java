@@ -16,17 +16,16 @@ public class RemoveDuplicates {
 	 * 
 	 * @param string the string to shrink
 	 * @param leng the new length of the string
-	 * @param pos position of the duplicate element
 	 * @return
 	 */
-	public char[] shrinkString(char[] string, int leng, int pos){
+	public char[] shrinkString(char[] string, int leng){
 		char[] result = new char[leng];
 		result[leng - 1] = '\0';
 		
 		int i = 0, j =0;
 		
 		while(i < leng - 1){
-			if(i != pos){
+			if(i != ' '){
 				result[i] = string[j % (leng - 1)];
 				i++;
 			}
@@ -46,13 +45,13 @@ public class RemoveDuplicates {
 		int leng = string.length;
 		
 		for(int i = 0; i < leng - 1; i ++){
-			for(int j = leng - 2; j >= 0; j--){
+			for(int j = leng - 2; j > i; j--){
 				if(string[i] == string[j]){
 					leng--;
-					string = shrinkString(string, leng, j);
+					string[j] = ' ';
 				}
 			}
 		}
-		return string;
+		return shrinkString(string, leng);
 	}
 }

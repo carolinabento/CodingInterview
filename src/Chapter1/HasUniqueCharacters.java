@@ -16,7 +16,7 @@ public class HasUniqueCharacters {
 	public boolean hasUniqueChars(char[] string){
 		
 		for(int i = 0; i < string.length - 1; i ++){
-			for(int j = 0; j >= 0; j--){
+			for(int j = 0; j > i; j--){
 				if(string[i] == string[j]){
 					return false;
 				}else{

@@ -31,4 +31,14 @@ public class TestRemoveDuplicates {
 		
 		assert(rd.removeDuplicates(myString) == answer);
 	}
+	
+	@Test
+	public void removeDuplicatesIII(){
+		char[] myString = {'a','b','a','c','b','\0'};
+		char[] answer = {'a','b','c','\0'};
+		
+		RemoveDuplicates rd = new RemoveDuplicates();
+		
+		assert(rd.removeDuplicates(myString) == answer);
+	}
 }
