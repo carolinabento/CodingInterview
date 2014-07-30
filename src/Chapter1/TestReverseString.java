@@ -1,3 +1,5 @@
+import static org.junit.Assert.*;
+
 import org.junit.*;
 
 public class TestReverseString {
@@ -9,7 +11,7 @@ public class TestReverseString {
 		char[] myString = {'a','\0'};
 		char[] reversed = rs.reverse(myString);
 		
-		assert(myString == reversed);
+		assertTrue(myString == reversed);
 	}
 	
 	
@@ -22,6 +24,26 @@ public class TestReverseString {
 		
 		char[] reversed = rs.reverse(myString);
 		
-		assert(reversed == answer);
+
+		for(int i = 0; i < myString.length; i++){
+			assertTrue(answer[i] == reversed[i]);
+		}
+	}
+	
+	@Test
+	public void testReverseII(){
+		ReverseString rs = new ReverseString();
+		
+		char[] myString = {'a','b','c','d','\0'};
+		char[] answer = {'d','b','c','a','\0'};
+		
+		char[] reversed = rs.reverse(myString);
+		
+		boolean result = true;
+		for(int i = 0; i < myString.length; i++){
+			result = result && (answer[i] == reversed[i]);
+		}
+		
+		assertFalse(result);
 	}
 }

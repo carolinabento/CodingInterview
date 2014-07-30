@@ -1,5 +1,6 @@
 /**
- * This class identifies 
+ * This class identifies if two strings are anagrams
+ * 
  * @author carolinabento
  *
  */
@@ -25,15 +26,15 @@ public class IsAnagram {
 			int result = 0;
 
 			for(int i = 0; i < len1 - 1; i++){
-				for(int j = 0; j < len1 - 1; j++){
+				for(int j = 0; str2[j] != '\0'; j++){
 					if(str1[i] == str2[j] && str2[j] != ' '){
 						result++;
-						str2[j] = ' ';
+						str2[j] = ' '; //mark the string character as matched
 						break;
 					}
 				}
 			}
-			return result == len1;
+			return result == (len1 - 1);
 		}
 	}
 }

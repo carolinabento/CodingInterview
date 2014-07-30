@@ -1,14 +1,17 @@
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class TestHasUniqueCharacters {
 
 	@Test
 	public void testNonUniqueString(){
-		char[] myString = {'a','b','c','a','\0'};
-		
 		HasUniqueCharacters huc = new HasUniqueCharacters();
 		
-		assert(huc.hasUniqueChars(myString) == false);
+		char[] myString = {'a','b','c','a','\0'};
+		
+		assertFalse(huc.hasUniqueChars(myString));
+		
 	}
 	
 	@Test
@@ -17,7 +20,7 @@ public class TestHasUniqueCharacters {
 		
 		HasUniqueCharacters huc = new HasUniqueCharacters();
 		
-		assert(huc.hasUniqueChars(myString) == false);
+		assertFalse(huc.hasUniqueChars(myString));
 	}
 	
 	@Test
@@ -26,7 +29,7 @@ public class TestHasUniqueCharacters {
 		
 		HasUniqueCharacters huc = new HasUniqueCharacters();
 		
-		assert(huc.hasUniqueChars(myString) == true);
+		assertTrue(huc.hasUniqueChars(myString));
 	}
 	
 	@Test
@@ -35,6 +38,6 @@ public class TestHasUniqueCharacters {
 		
 		HasUniqueCharacters huc = new HasUniqueCharacters();
 		
-		assert(huc.hasUniqueChars(myString) == true);
+		assertTrue(huc.hasUniqueChars(myString));
 	}
 }

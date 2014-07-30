@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertTrue;
+
 /**
  * This class removes the duplicates from a C-style string, i.e., a string is represented by an array of characters and a delimiter at the 
  * end such as "abcd\0"
@@ -20,16 +22,15 @@ public class RemoveDuplicates {
 	 */
 	public char[] shrinkString(char[] string, int leng){
 		char[] result = new char[leng];
-		result[leng - 1] = '\0';
 		
-		int i = 0, j =0;
+		int i = 0, j = 0;
 		
-		while(i < leng - 1){
-			if(i != ' '){
-				result[i] = string[j % (leng - 1)];
-				i++;
+		while(i < leng){
+			if(string[i] != ' '){
+				result[j] = string[i % leng];
+				j++;
 			}
-			j++;
+			i++;
 		}
 		
 		return result;
@@ -45,13 +46,13 @@ public class RemoveDuplicates {
 		int leng = string.length;
 		
 		for(int i = 0; i < leng - 1; i ++){
-			for(int j = leng - 2; j > i; j--){
+			for(int j = i + 1; j < leng; j++){
 				if(string[i] == string[j]){
 					leng--;
 					string[j] = ' ';
 				}
 			}
-		}
+		}	
 		return shrinkString(string, leng);
 	}
 }

@@ -1,4 +1,6 @@
-import org.junit.Test;
+import static org.junit.Assert.*;
+
+import org.junit.*;
 
 public class TestRemoveDuplicates {
 
@@ -8,8 +10,11 @@ public class TestRemoveDuplicates {
 		char[] answer = {'a','b','c','d','\0'};
 		
 		RemoveDuplicates rd = new RemoveDuplicates();
+		char[] removedDuplicates = rd.removeDuplicates(myString);
 		
-		assert(rd.removeDuplicates(myString) == answer);
+		for(int i = 0; i < myString.length; i++){
+			assertTrue(answer[i] == removedDuplicates[i]);
+		}
 	}
 	
 	@Test
@@ -19,7 +24,11 @@ public class TestRemoveDuplicates {
 		
 		RemoveDuplicates rd = new RemoveDuplicates();
 		
-		assert(rd.removeDuplicates(myString) == answer);
+		char[] removedDuplicates = rd.removeDuplicates(myString);
+		
+		for(int i = 0; i < answer.length; i++){	
+			assertTrue(answer[i] == removedDuplicates[i]);
+		}
 	}
 	
 	@Test
@@ -29,7 +38,11 @@ public class TestRemoveDuplicates {
 		
 		RemoveDuplicates rd = new RemoveDuplicates();
 		
-		assert(rd.removeDuplicates(myString) == answer);
+		char[] removedDuplicates = rd.removeDuplicates(myString);
+		
+		for(int i = 0; i < answer.length; i++){	
+			assertTrue(answer[i] == removedDuplicates[i]);
+		}
 	}
 	
 	@Test
@@ -38,7 +51,11 @@ public class TestRemoveDuplicates {
 		char[] answer = {'a','b','c','\0'};
 		
 		RemoveDuplicates rd = new RemoveDuplicates();
+		char[] removedDuplicates = rd.removeDuplicates(myString);
 		
-		assert(rd.removeDuplicates(myString) == answer);
+		
+		for(int i = 0; i < answer.length; i++){
+			assertTrue(answer[i] == removedDuplicates[i]);
+		}
 	}
 }
