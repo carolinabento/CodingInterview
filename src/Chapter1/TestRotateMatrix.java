@@ -84,6 +84,60 @@ public class TestRotateMatrix {
 	}
 	
 	@Test
+	public void testRotateClockWiseI(){
+		
+		int[][] matrix = new int[4][4];
+		
+		matrix[0][0] = 1;
+		matrix[0][1] = 2;
+		matrix[0][2] = 3;
+		matrix[0][3] = 4;
+		matrix[1][0] = 5;
+		matrix[1][1] = 6;
+		matrix[1][2] = 7;
+		matrix[1][3] = 8;
+		matrix[2][0] = 9;
+		matrix[2][1] = 0;
+		matrix[2][2] = 1;
+		matrix[2][3] = 2;
+		matrix[3][0] = 3;
+		matrix[3][1] = 4;
+		matrix[3][2] = 5;
+		matrix[3][3] = 6;
+		
+		
+		int[][] answer = new int[4][4];
+		
+		answer[0][0] = 3;
+		answer[0][1] = 9;
+		answer[0][2] = 5;
+		answer[0][3] = 1;
+		answer[1][0] = 4;
+		answer[1][1] = 0;
+		answer[1][2] = 6;
+		answer[1][3] = 2;
+		answer[2][0] = 5;
+		answer[2][1] = 1;
+		answer[2][2] = 7;
+		answer[2][3] = 3;
+		answer[3][0] = 6;
+		answer[3][1] = 2;
+		answer[3][2] = 8;
+		answer[3][3] = 4;
+		
+		RotateMatrix rm = new RotateMatrix();
+		
+		int[][] rotatedMatrix = rm.rotate(matrix, 0);
+		
+		for(int i = 0; i < matrix.length; i++){
+			for(int j = 0; j < matrix.length; j++){
+				assertTrue(rotatedMatrix[i][j] == answer[i][j]);
+			}
+		}	
+	}
+	
+	
+	@Test
 	public void testWrongRotate(){
 		
 		int[][] matrix = new int[3][3];
@@ -167,4 +221,6 @@ public class TestRotateMatrix {
 		}
 		assertFalse(result);
 	}
+	
+	
 }
