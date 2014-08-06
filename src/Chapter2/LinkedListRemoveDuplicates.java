@@ -1,28 +1,48 @@
 package Chapter2;
 
-public class LinkedListRemoveDuplicates<T> {
-	LinkedList<T> list;
-	T[] buffer;
+/**
+ * 
+ * @author carolinabento
+ *
+ * @param <T>
+ */
+public class LinkedListRemoveDuplicates<T>{
 
-	public LinkedListRemoveDuplicates(LinkedList<T> list){
-		this.list = list;
-		this.buffer = (T[])(new Object[10]);
+	public LinkedListRemoveDuplicates(){}
+
+	public boolean contains(T[] buff, T value, int index){
+		boolean result = false;
+		for(int i = 0; i <= index; i++){
+			if(buff[i] == value){
+				return true;
+			}
+		}
+		return result;
 	}
-
-	public LinkedList<T> remove(){
-
-		if(this.list.isEmpty()){
+	
+	public LinkedList<T> remove(LinkedList<T> list){
+		T[] buffer = (T[]) new Object[list.size()];
+		
+		if(list.isEmpty()){
 			throw new NullPointerException();
 		}else{
-			MySet os = new MySet();
-			T [] set = (T[]) os.populateMySet(this.list);
-			LinkedList<T> res = new LinkedList<T>();
-			
-			for(T elem : set){
-				res.append((T) elem);
+			Node<T> current = list.getHead();
+			Node<T> prev = null;
+			int index = 0;
+			while(current.next != null){
+				if(!contains(buffer,(T) current.value, index)){
+					buffer[index++] = (T) current.value;
+					prev = current;
+					current = current.next;
+				}else{
+					Node<T> nextNode = current.next;
+					prev.next = nextNode;
+					current.next = null;
+					current = nextNode;
+				}
 			}
-			
-			return res;
 		}
+			
+		return list;
 	}
 }

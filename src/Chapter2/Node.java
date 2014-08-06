@@ -5,23 +5,22 @@ package Chapter2;
  * @author Carolina
  *
  */
-public class Node<Type>{
-	public Type value;
+public class Node<T>{
+	public T value;
 	public Node next;	
 
-	public Node(){
-	}
+	public Node(){}
 
-	public Node(Type value){
+	public Node(T value){
 		this.value = value;
 		this.next = null;
 	}
 
-	public Type getValue(){
+	public T getValue(){
 		return this.value;
 	}
 	
-	public Node<Type> getNext(){
+	public Node<T> getNext(){
 		return this.next;
 	}
 	

@@ -1,4 +1,5 @@
 package Chapter2;
+
 /**
  * Implementation of a single Linked List with the common API methods:
  * 	- create empty single LinkedList
@@ -8,7 +9,7 @@ package Chapter2;
  * 	- remove
  * 	- peek
  * 
- * @author Carolina
+ * @author carolinabento
  *
  * @param <T> - any template
  */
@@ -98,6 +99,10 @@ public class LinkedList<T> {
 
 	public Node<T> getHead(){
 		return this.head;
+	}
+	
+	public Node<T> getTail(){
+		return this.tail;
 	}
 	
 	public void prettyPrint(){
