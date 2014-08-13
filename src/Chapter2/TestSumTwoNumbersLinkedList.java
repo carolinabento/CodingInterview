@@ -13,7 +13,7 @@ public class TestSumTwoNumbersLinkedList {
 		LinkedList<Integer> firstList = new LinkedList<Integer>();
 		LinkedList<Integer> secondList = new LinkedList<Integer>();
 		
-		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,0,secondList,0);		
+		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,secondList);		
 		sum.sumNumbersReverseOrder();
 	}
 	
@@ -22,7 +22,7 @@ public class TestSumTwoNumbersLinkedList {
 		LinkedList<Integer> firstList = new LinkedList<Integer>();
 		LinkedList<Integer> secondList = new LinkedList<Integer>(3);
 		
-		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,1, secondList,0);		
+		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList, secondList);		
 		LinkedList<Integer> res = sum.sumNumbersReverseOrder();
 				
 		assertTrue(res.getHead().value == 3);
@@ -34,7 +34,7 @@ public class TestSumTwoNumbersLinkedList {
 		LinkedList<Integer> firstList = new LinkedList<Integer>(3);
 		LinkedList<Integer> secondList = new LinkedList<Integer>();
 		
-		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,0, secondList,1);		
+		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,secondList);		
 		LinkedList<Integer> res = sum.sumNumbersReverseOrder();
 		
 		assertTrue(res.getHead().value == 3);
@@ -46,10 +46,9 @@ public class TestSumTwoNumbersLinkedList {
 		LinkedList<Integer> firstList = new LinkedList<Integer>(new Integer(1));
 		LinkedList<Integer> secondList = new LinkedList<Integer>(new Integer(1));
 		
-		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,1, secondList,1);
+		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList, secondList);
 		LinkedList<Integer> res = sum.sumNumbersReverseOrder();
 		
-		res.prettyPrint();
 		assertTrue(res.getHead().value == 2);
 		
 	}
@@ -64,10 +63,9 @@ public class TestSumTwoNumbersLinkedList {
 		secondList.append(9);
 		secondList.append(2);
 		
-		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,3, secondList,3);
+		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,secondList);
 		LinkedList<Integer> res = sum.sumNumbersReverseOrder();
 		
-		res.prettyPrint();
 		
 		assertTrue(res.getHead().value == 2);
 		assertTrue(res.getHead().getNext().value == 1);
@@ -86,10 +84,8 @@ public class TestSumTwoNumbersLinkedList {
 		secondList.append(0);
 		secondList.append(0);
 
-		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList,3, secondList,3);
+		SumTwoNumbersLinkedList sum = new SumTwoNumbersLinkedList(firstList, secondList);
 		LinkedList<Integer> res = sum.sumNumbersReverseOrder();
-		
-		res.prettyPrint();
 		
 		assertTrue(res.getHead().value == 0);
 		assertTrue(res.getHead().getNext().value == 0);
