@@ -1,18 +1,15 @@
 package Chapter2;
 
-import sun.security.util.Length;
-
-
-public class RemoveNodeCircularList<T> {
+public class FindNodeCircularList<T> {
 	private Object[] checkedElements;	
 	private int size;
 
-	public RemoveNodeCircularList(LinkedList<T> list, int length){
-		this.checkedElements = new Object[length];		
-		this.size = length;
+	public FindNodeCircularList(LinkedList<T> list){
+		this.size = list.size();
+		this.checkedElements = new Object[this.size];		
 	}
 
-	public boolean alreadyChecked(Node<T> node){
+	public int alreadyChecked(Node<T> node){
 		int i = 0;
 		boolean res = false;
 
@@ -24,7 +21,11 @@ public class RemoveNodeCircularList<T> {
 				i++;
 			}
 		}
-		return res;
+		if(res){
+			return i;
+		}else{
+			return -1;
+		}
 	}
 
 
@@ -39,8 +40,8 @@ public class RemoveNodeCircularList<T> {
 
 		if(list.size() > 1){
 			Node<T> currentNode = list.getHead();
-			while(index < list.size()){
-				if(!alreadyChecked(currentNode)){
+			while(index < this.size){
+				if(alreadyChecked(currentNode) == -1){
 					checkedElements[index] = currentNode;
 					index++;
 					currentNode = currentNode.next;	
@@ -52,8 +53,9 @@ public class RemoveNodeCircularList<T> {
 				
 			}
 			
-			if(!found && alreadyChecked(currentNode)){
-				result = (Node<T>) checkedElements[index-1];
+			int checkedValue = alreadyChecked(currentNode);
+			if(!found && checkedValue != -1){
+				result = (Node<T>) checkedElements[checkedValue];
 			}
 		}
 		
