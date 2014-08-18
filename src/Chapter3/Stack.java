@@ -2,7 +2,7 @@ package Chapter3;
 
 public class Stack {
 
-	public int min = Integer.MAX_VALUE; 
+	private int min = Integer.MAX_VALUE; 
 	StackNode<Integer> top;
 
 	/**
