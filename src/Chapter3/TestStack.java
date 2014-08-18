@@ -1,37 +1,157 @@
 package Chapter3;
 
 import static org.junit.Assert.*;
-
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 
 public class TestStack {
 
 	@Test
-	public void emptyStackTest(){
-		Stack<Integer> s = new Stack<Integer>();
+	public void testEmpty(){
+		Stack myStack = new Stack();
+
+		assertTrue(myStack.isEmpty());
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void invalidPop(){
+		Stack myStack = new Stack();
+
+		assertTrue(myStack.isEmpty());
 		
-		assertTrue(s.isEmpty()== true);
+		myStack.pop();
+	}
+
+	@Test
+	public void testStackInit(){
+		Stack myStack = new Stack(1);
+		
+		assertFalse(myStack.isEmpty());
+		assertTrue(myStack.top.value == 1);
 	}
 	
 	@Test
-	public void pushTest(){
-		Stack<Integer> s = new Stack<Integer>();
-		s.push(new Integer(3));	
-		assertTrue(s.getSize() == 1);
+	public void testPush(){
+		Stack myStack = new Stack(1);
+		
+		assertFalse(myStack.isEmpty());
+		assertTrue(myStack.top.value == 1);
+		myStack.push(2);
+		assertTrue(myStack.top.value == 2);
 	}
 	
 	@Test
-	public void popTest(){
-		Stack<Integer> s = new Stack<Integer>();
-		s.push(new Integer(3));
-		s.push(new Integer(4));
-		assertTrue(s.isEmpty() == false);
-		assertTrue(s.getSize() == 2);
-		int res = s.pop();
-		assertTrue(res == new Integer(4));
-		res = s.pop();
-		assertTrue(res == new Integer(3));
-		assertTrue(s.isEmpty() == true);
+	public void testMin(){
+		Stack myStack = new Stack(1);
+		
+		assertFalse(myStack.isEmpty());
+		assertTrue(myStack.top.value == 1);
+		myStack.push(2);
+		assertTrue(myStack.top.value == 2);
+		
+		assertTrue(myStack.min() == 1);
+	}
+	
+	@Test
+	public void testPop(){
+		Stack myStack = new Stack(1);
+		
+		assertFalse(myStack.isEmpty());
+		assertTrue(myStack.top.value == 1);
+		myStack.push(2);
+		assertTrue(myStack.top.value == 2);
+		myStack.push(3);
+		assertTrue(myStack.top.value == 3);
+		myStack.push(0);
+		assertTrue(myStack.top.value == 0);
+		
+		assertTrue(myStack.min() == 0);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 3);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 2);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 1);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.isEmpty());
+	}
+	
+	@Test
+	public void testPopI(){
+		Stack myStack = new Stack(1);
+		
+		assertFalse(myStack.isEmpty());
+		assertTrue(myStack.top.value == 1);
+		myStack.push(2);
+		assertTrue(myStack.top.value == 2);
+		myStack.push(3);
+		assertTrue(myStack.top.value == 3);
+		myStack.push(0);
+		assertTrue(myStack.top.value == 0);
+		
+		assertTrue(myStack.min() == 0);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 3);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 2);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 1);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.push(0);
+		assertTrue(myStack.top.value == 0);
+		assertTrue(myStack.min() == 0);
+		
+		myStack.pop();
+		myStack.pop();
+		assertTrue(myStack.isEmpty());
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void testPopII(){
+		Stack myStack = new Stack(1);
+		
+		assertFalse(myStack.isEmpty());
+		assertTrue(myStack.top.value == 1);
+		myStack.push(2);
+		assertTrue(myStack.top.value == 2);
+		myStack.push(3);
+		assertTrue(myStack.top.value == 3);
+		myStack.push(0);
+		assertTrue(myStack.top.value == 0);
+		
+		assertTrue(myStack.min() == 0);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 3);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 2);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.pop();
+		assertTrue(myStack.top.value == 1);
+		assertTrue(myStack.min() == 1);
+		
+		myStack.push(0);
+		assertTrue(myStack.top.value == 0);
+		assertTrue(myStack.min() == 0);
+		
+		myStack.pop();
+		myStack.pop();
+		assertTrue(myStack.isEmpty());
+		myStack.pop();
 	}
 }
