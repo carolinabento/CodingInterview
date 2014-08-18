@@ -3,6 +3,7 @@ package Chapter3;
 public class Stack {
 
 	private int min = Integer.MAX_VALUE; 
+	private int size;
 	StackNode<Integer> top;
 
 	/**
@@ -10,6 +11,7 @@ public class Stack {
 	 */
 	public Stack(){
 		this.top = null;
+		this.size = 0;
 	}
 
 	/**
@@ -20,6 +22,7 @@ public class Stack {
 		StackNode<Integer> node = new StackNode(value);
 		this.min = value;
 		this.top = node;
+		this.size++;
 	}
 
 	/**
@@ -27,7 +30,7 @@ public class Stack {
 	 * @return true if the stack is empty, false otherwise
 	 */
 	public boolean isEmpty(){
-		return this.top == null;
+		return this.top == null && this.size == 0;
 	}
 
 	/**
@@ -46,6 +49,8 @@ public class Stack {
 			node.prev = this.top;
 			this.top = node;
 		}
+		
+		this.size++;
 	}
 
 	/**
@@ -71,6 +76,7 @@ public class Stack {
 				this.top = null;
 			}
 
+			this.size--;
 			return temp.value;
 		}
 	}
@@ -82,6 +88,14 @@ public class Stack {
 	 */
 	public int min(){
 		return this.min;
+	}
+	
+	/**
+	 * returns the number of elements in the stack
+	 * @return the number of elements in the stack
+	 */
+	public int size(){
+		return this.size;
 	}
 
 

@@ -10,6 +10,7 @@ public class TestStack {
 		Stack myStack = new Stack();
 
 		assertTrue(myStack.isEmpty());
+		assertTrue(myStack.size() == 0);
 	}
 
 	@Test(expected = NullPointerException.class)
@@ -27,6 +28,7 @@ public class TestStack {
 		
 		assertFalse(myStack.isEmpty());
 		assertTrue(myStack.top.value == 1);
+		assertTrue(myStack.size() == 1);
 	}
 	
 	@Test
@@ -37,6 +39,7 @@ public class TestStack {
 		assertTrue(myStack.top.value == 1);
 		myStack.push(2);
 		assertTrue(myStack.top.value == 2);
+		assertTrue(myStack.size() == 2);
 	}
 	
 	@Test
@@ -65,18 +68,22 @@ public class TestStack {
 		assertTrue(myStack.top.value == 0);
 		
 		assertTrue(myStack.min() == 0);
+		assertTrue(myStack.size() == 4);
 		
 		myStack.pop();
 		assertTrue(myStack.top.value == 3);
 		assertTrue(myStack.min() == 1);
+		assertTrue(myStack.size() == 3);
 		
 		myStack.pop();
 		assertTrue(myStack.top.value == 2);
 		assertTrue(myStack.min() == 1);
+		assertTrue(myStack.size() == 2);
 		
 		myStack.pop();
 		assertTrue(myStack.top.value == 1);
 		assertTrue(myStack.min() == 1);
+		assertTrue(myStack.size() == 1);
 		
 		myStack.pop();
 		assertTrue(myStack.isEmpty());
@@ -115,6 +122,7 @@ public class TestStack {
 		
 		myStack.pop();
 		myStack.pop();
+		assertTrue(myStack.size() == 0);
 		assertTrue(myStack.isEmpty());
 	}
 	
