@@ -112,4 +112,12 @@ public class Stack {
 			current = current.prev;
 		}
 	}
+	
+	/**
+	 * check the top value of the stack
+	 * @return the top value of the stack
+	 */
+	public int peek(){
+		return this.top.value;
+	}
 }
